@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopHatHacker.Tools", "..\On
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows Phone Copy of TopHatHacker.Tools", "..\OnScreenKeyboard\OnScreenKeyboard\Windows Phone Copy of TopHatHacker.Tools.csproj", "{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows Phone Copy of XnaOnScreenKeyboard_Windows", "XnaOnScreenKeyboard_Windows\XnaOnScreenKeyboard_Windows\Windows Phone Copy of XnaOnScreenKeyboard_Windows.csproj", "{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -61,20 +59,6 @@ Global
 		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
 		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Release|Windows Phone.Build.0 = Release|Windows Phone
 		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Release|x86.ActiveCfg = Release|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Debug|Mixed Platforms.ActiveCfg = Debug|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Debug|Mixed Platforms.Build.0 = Debug|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Debug|Mixed Platforms.Deploy.0 = Debug|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Debug|Windows Phone.Deploy.0 = Debug|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Debug|x86.ActiveCfg = Debug|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Release|Mixed Platforms.ActiveCfg = Release|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Release|Mixed Platforms.Build.0 = Release|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Release|Mixed Platforms.Deploy.0 = Release|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Release|Windows Phone.Build.0 = Release|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Release|Windows Phone.Deploy.0 = Release|Windows Phone
-		{A467DDE3-EA4A-44D5-9041-1EC1CFD6BA3A}.Release|x86.ActiveCfg = Release|Windows Phone
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
