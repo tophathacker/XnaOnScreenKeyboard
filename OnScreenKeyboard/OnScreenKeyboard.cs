@@ -191,6 +191,15 @@ namespace TopHatHacker.Tools
                         keys.Add(key);
                     }
 
+                    else if (i == 30)
+                    {
+                        key.KeyChar = quertyList[i];
+                        key.key = quertyKeyList[i];
+                        key.Bounds = new Rectangle(keys[keys.Count -1].Bounds.X + keys[keys.Count - 1].Bounds.Width, GraphicsDevice.Viewport.Height - keyboardHeight + keyHeight * 3, keyWidth * 3, keyHeight);
+                        key.DrawingBounds = new Rectangle(key.Bounds.X + key.Bounds.Width * 5 / 100, key.Bounds.Y + key.Bounds.Height * 5 / 100, key.Bounds.Width - key.Bounds.Width * 5 / 100 - key.Bounds.Width * 5 / 100, key.Bounds.Height - key.Bounds.Height * 5 / 100 - key.Bounds.Height * 5 / 100);
+                        keys.Add(key);
+                    }
+
                 }
             }
         }
