@@ -61,6 +61,7 @@ namespace TopHatHacker.Tools
         public KeyboardState GetState()
         {
             KeyboardState temp = new KeyboardState(keysDown);
+            keysDown = new Keys[0];
             return temp;
         }
 
@@ -92,7 +93,7 @@ namespace TopHatHacker.Tools
                 {
                     if(key.Bounds.Intersects(new Rectangle((int)position.X,(int)position.Y,1,1)))
                     {
-                        if(gameTime.TotalGameTime.TotalMilliseconds -  lastClick.TotalMilliseconds < 500)
+                        if(gameTime.TotalGameTime.TotalMilliseconds -  lastClick.TotalMilliseconds < 100)
                             if (lastKeyDown == key.key)
                                 return false;
                         lastKeyDown = key.key;

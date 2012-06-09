@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XnaOnScreenKeyboard_Windows", "XnaOnScreenKeyboard_Windows\XnaOnScreenKeyboard_Windows\XnaOnScreenKeyboard_Windows.csproj", "{4AF0A34E-1A3D-4C28-B880-519655AF6712}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "XnaOnScreenKeyboard_WindowsContent", "XnaOnScreenKeyboard_Windows\XnaOnScreenKeyboard_WindowsContent\XnaOnScreenKeyboard_WindowsContent.contentproj", "{58A22D87-1AFA-4566-84EC-07905BDEC14D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XnaOnScreenKeyboard_WindowsContent", "XnaOnScreenKeyboard_Windows\XnaOnScreenKeyboard_WindowsContent\XnaOnScreenKeyboard_WindowsContent.contentproj", "{58A22D87-1AFA-4566-84EC-07905BDEC14D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopHatHacker.Tools", "..\OnScreenKeyboard\OnScreenKeyboard\TopHatHacker.Tools.csproj", "{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows Phone Copy of TopHatHacker.Tools", "..\OnScreenKeyboard\OnScreenKeyboard\Windows Phone Copy of TopHatHacker.Tools.csproj", "{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopHatHacker.Tools.OnScreenKeyboard", "OnScreenKeyboard\TopHatHacker.Tools.OnScreenKeyboard.csproj", "{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,25 +38,13 @@ Global
 		{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}.Debug|Windows Phone.ActiveCfg = Debug|x86
-		{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}.Debug|Windows Phone.Build.0 = Debug|x86
 		{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}.Debug|x86.ActiveCfg = Debug|x86
 		{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}.Debug|x86.Build.0 = Debug|x86
 		{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}.Release|Mixed Platforms.ActiveCfg = Release|x86
 		{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}.Release|Mixed Platforms.Build.0 = Release|x86
 		{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}.Release|Windows Phone.ActiveCfg = Release|x86
-		{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}.Release|Windows Phone.Build.0 = Release|x86
 		{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}.Release|x86.ActiveCfg = Release|x86
 		{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}.Release|x86.Build.0 = Release|x86
-		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Debug|Mixed Platforms.ActiveCfg = Debug|Windows Phone
-		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Debug|Mixed Platforms.Build.0 = Debug|Windows Phone
-		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
-		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
-		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Debug|x86.ActiveCfg = Debug|Windows Phone
-		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Release|Mixed Platforms.ActiveCfg = Release|Windows Phone
-		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Release|Mixed Platforms.Build.0 = Release|Windows Phone
-		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
-		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Release|Windows Phone.Build.0 = Release|Windows Phone
-		{E8A9E62B-B1CC-4449-8EB7-4C0FDCE3F0B4}.Release|x86.ActiveCfg = Release|Windows Phone
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

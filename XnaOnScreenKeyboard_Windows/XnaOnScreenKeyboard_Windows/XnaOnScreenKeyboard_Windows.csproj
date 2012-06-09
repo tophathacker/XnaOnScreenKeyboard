@@ -116,9 +116,9 @@
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\OnScreenKeyboard\OnScreenKeyboard\TopHatHacker.Tools.csproj">
+    <ProjectReference Include="..\..\OnScreenKeyboard\TopHatHacker.Tools.OnScreenKeyboard.csproj">
       <Project>{EAA06C2F-BF33-42DB-881E-F4D90BFAE53B}</Project>
-      <Name>TopHatHacker.Tools</Name>
+      <Name>TopHatHacker.Tools.OnScreenKeyboard</Name>
     </ProjectReference>
     <ProjectReference Include="..\XnaOnScreenKeyboard_WindowsContent\XnaOnScreenKeyboard_WindowsContent.contentproj">
       <Name>XnaOnScreenKeyboard_WindowsContent %28Content%29</Name>
