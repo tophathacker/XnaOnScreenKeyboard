@@ -27,6 +27,8 @@ namespace XnaOnScreenKeyboard_Windows
         {
             text = "";
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferHeight = 600;
+            graphics.PreferredBackBufferWidth = 400;
             IsMouseVisible = true;
             Content.RootDirectory = "Content";
             onScreenKeyboard = new OnScreenKeyboard(this);
@@ -79,9 +81,14 @@ namespace XnaOnScreenKeyboard_Windows
                 this.Exit();
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
                 onScreenKeyboard.Visible = !onScreenKeyboard.Visible;
-            foreach (Keys key in onScreenKeyboard.GetState().GetPressedKeys())
+            foreach (Keys key in Keyboard.GetState().GetPressedKeys())
             {
-                text += key.ToString();
+                if (key == Keys.Enter)
+                    text += Environment.NewLine;
+                else if (key == Keys.Back)
+                        text = text.Substring(0, text.Length - 1);
+                else
+                    text += key.ToString();
             }
             // TODO: Add your update logic here
             base.Update(gameTime);

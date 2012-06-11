@@ -25,15 +25,17 @@ namespace TopHatHacker.Tools
     public class OnScreenKeyboard : DrawableGameComponent
     {
         string[] quertyList = { "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "^", "z", "x", "c", "v", "b", "n", "m", "<--", "?123", "Space","Done"};
+        string[] quertyListCaps = { "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "^", "Z", "X", "C", "V", "B", "N", "M", "<--", "ABCD", "Space", "Done" };
         Keys[] quertyKeyList = { Keys.Q, Keys.W, Keys.E, Keys.R, Keys.T, Keys.Y, Keys.U, Keys.I, Keys.O, Keys.P, Keys.A, Keys.S, Keys.D, Keys.F, Keys.G, Keys.H, Keys.J, Keys.K, Keys.L, Keys.CapsLock, Keys.Z, Keys.X, Keys.C, Keys.V, Keys.B, Keys.N, Keys.M, Keys.Back, Keys.SelectMedia, Keys.Space, Keys.Enter };
         /// <summary>
         /// Set or get the font file.
         /// </summary>
         public SpriteFont Font;
         TimeSpan lastClick;
-        Keys lastKeyDown;
+        int lastKeyDown;
         public bool Enabled = true;
         Keys[] keysDown;
+        public bool Caps = false;
         public Color BackgroundColor;
         public Color ButtonColor1;
         public Color ButtonColor2;
@@ -93,14 +95,22 @@ namespace TopHatHacker.Tools
                 {
                     if(key.Bounds.Intersects(new Rectangle((int)position.X,(int)position.Y,1,1)))
                     {
-                        if(gameTime.TotalGameTime.TotalMilliseconds -  lastClick.TotalMilliseconds < 100)
+                        if(gameTime.TotalGameTime.TotalMilliseconds -  lastClick.TotalMilliseconds < 300)
                             if (lastKeyDown == key.key)
                                 return false;
+                        if (key.key == 19)
+                        {
+                            Caps = !Caps;
+                            return false;
+                        }
                         lastKeyDown = key.key;
                         lastClick = gameTime.TotalGameTime;
                         Keys[] keysDownTemp = new Keys[keysDown.Length+1];
                         keysDown.CopyTo(keysDownTemp, 0);
-                        keysDownTemp[keysDownTemp.Length - 1] = key.key;
+                        if(Caps)
+                            keysDownTemp[keysDownTemp.Length - 1] = quertyKeyList[key.key];
+                        else
+                            keysDownTemp[keysDownTemp.Length - 1] = quertyKeyList[key.key];
                         keysDown = keysDownTemp;
                         return true;
                     }
@@ -127,7 +137,7 @@ namespace TopHatHacker.Tools
                 {
                     keys = new List<singleKey>();
                     key.KeyChar = quertyList[i];
-                    key.key = quertyKeyList[i];
+                    key.key = i;
                     key.Bounds = new Rectangle(0, GraphicsDevice.Viewport.Height - keyboardHeight, keyWidth, keyHeight);
                     key.DrawingBounds = new Rectangle(key.Bounds.X + key.Bounds.Width * 5 / 100, key.Bounds.Y + key.Bounds.Height * 5 / 100, keyWidth - key.Bounds.Width * 5 / 100 - key.Bounds.Width * 5 / 100, keyHeight - key.Bounds.Height * 5 / 100 - key.Bounds.Height * 5 / 100);
                     keys.Add(key);
@@ -137,7 +147,7 @@ namespace TopHatHacker.Tools
                     if (i < 10)
                     {
                         key.KeyChar = quertyList[i];
-                        key.key = quertyKeyList[i];
+                        key.key = i;
                         key.Bounds = new Rectangle(keys[keys.Count - 1].Bounds.X + keyWidth, GraphicsDevice.Viewport.Height - keyboardHeight, keyWidth, keyHeight);
                         key.DrawingBounds = new Rectangle(key.Bounds.X + key.Bounds.Width * 5 / 100, key.Bounds.Y + key.Bounds.Height * 5 / 100, keyWidth - key.Bounds.Width * 5 / 100 - key.Bounds.Width * 5 / 100, keyHeight - key.Bounds.Height * 5 / 100 - key.Bounds.Height * 5 / 100);
                         keys.Add(key);
@@ -145,7 +155,7 @@ namespace TopHatHacker.Tools
                     else if (i == 10)
                     {
                         key.KeyChar = quertyList[i];
-                        key.key = quertyKeyList[i];
+                        key.key = i;
                         key.Bounds = new Rectangle((GraphicsDevice.Viewport.Width - keyWidth * 9)/2, GraphicsDevice.Viewport.Height - keyboardHeight + keyHeight, keyWidth, keyHeight);
                         key.DrawingBounds = new Rectangle(key.Bounds.X + key.Bounds.Width * 5 / 100, key.Bounds.Y + key.Bounds.Height * 5 / 100, keyWidth - key.Bounds.Width * 5 / 100 - key.Bounds.Width * 5 / 100, keyHeight - key.Bounds.Height * 5 / 100 - key.Bounds.Height * 5 / 100);
                         keys.Add(key);
@@ -153,7 +163,7 @@ namespace TopHatHacker.Tools
                     else if (i < 19)
                     {
                         key.KeyChar = quertyList[i];
-                        key.key = quertyKeyList[i];
+                        key.key = i;
                         key.Bounds = new Rectangle(keys[keys.Count - 1].Bounds.X + keyWidth, GraphicsDevice.Viewport.Height - keyboardHeight + keyHeight, keyWidth, keyHeight);
                         key.DrawingBounds = new Rectangle(key.Bounds.X + key.Bounds.Width * 5 / 100, key.Bounds.Y + key.Bounds.Height * 5 / 100, keyWidth - key.Bounds.Width * 5 / 100 - key.Bounds.Width * 5 / 100, keyHeight - key.Bounds.Height * 5 / 100 - key.Bounds.Height * 5 / 100);
                         keys.Add(key);
@@ -161,7 +171,7 @@ namespace TopHatHacker.Tools
                     else if (i == 19)
                     {
                         key.KeyChar = quertyList[i];
-                        key.key = quertyKeyList[i];
+                        key.key = i;
                         key.Bounds = new Rectangle((GraphicsDevice.Viewport.Width - keyWidth * 9) / 2, GraphicsDevice.Viewport.Height - keyboardHeight + keyHeight * 2, keyWidth, keyHeight);
                         key.DrawingBounds = new Rectangle(key.Bounds.X + key.Bounds.Width * 5 / 100, key.Bounds.Y + key.Bounds.Height * 5 / 100, keyWidth - key.Bounds.Width * 5 / 100 - key.Bounds.Width * 5 / 100, keyHeight - key.Bounds.Height * 5 / 100 - key.Bounds.Height * 5 / 100);
                         keys.Add(key);
@@ -169,7 +179,7 @@ namespace TopHatHacker.Tools
                     else if (i < 28)
                     {
                         key.KeyChar = quertyList[i];
-                        key.key = quertyKeyList[i];
+                        key.key = i;
                         key.Bounds = new Rectangle(keys[keys.Count - 1].Bounds.X + keyWidth, GraphicsDevice.Viewport.Height - keyboardHeight + keyHeight * 2, keyWidth, keyHeight);
                         key.DrawingBounds = new Rectangle(key.Bounds.X + key.Bounds.Width * 5 / 100, key.Bounds.Y + key.Bounds.Height * 5 / 100, keyWidth - key.Bounds.Width * 5 / 100 - key.Bounds.Width * 5 / 100, keyHeight - key.Bounds.Height * 5 / 100 - key.Bounds.Height * 5 / 100);
                         keys.Add(key);
@@ -177,7 +187,7 @@ namespace TopHatHacker.Tools
                     else if (i == 28)
                     {
                         key.KeyChar = quertyList[i];
-                        key.key = quertyKeyList[i];
+                        key.key = i;
                         key.Bounds = new Rectangle((GraphicsDevice.Viewport.Width - keyWidth * 9) / 2, GraphicsDevice.Viewport.Height - keyboardHeight + keyHeight * 3, keyWidth*2, keyHeight);
                         key.DrawingBounds = new Rectangle(key.Bounds.X + key.Bounds.Width * 5 / 100, key.Bounds.Y + key.Bounds.Height * 5 / 100, key.Bounds.Width - key.Bounds.Width * 5 / 100 - key.Bounds.Width * 5 / 100, key.Bounds.Height - key.Bounds.Height * 5 / 100 - key.Bounds.Height * 5 / 100);
                         keys.Add(key);
@@ -185,7 +195,7 @@ namespace TopHatHacker.Tools
                     else if (i == 29)
                     {
                         key.KeyChar = quertyList[i];
-                        key.key = quertyKeyList[i];
+                        key.key = i;
                         key.Bounds = new Rectangle(keys[keys.Count - 1].Bounds.X + keys[keys.Count - 1].Bounds.Width, GraphicsDevice.Viewport.Height - keyboardHeight + keyHeight * 3, keyWidth * 4, keyHeight);
                         key.DrawingBounds = new Rectangle(key.Bounds.X + key.Bounds.Width * 5 / 100, key.Bounds.Y + key.Bounds.Height * 5 / 100, key.Bounds.Width - key.Bounds.Width * 5 / 100 - key.Bounds.Width * 5 / 100, key.Bounds.Height - key.Bounds.Height * 5 / 100 - key.Bounds.Height * 5 / 100);
                         keys.Add(key);
@@ -194,7 +204,7 @@ namespace TopHatHacker.Tools
                     else if (i == 30)
                     {
                         key.KeyChar = quertyList[i];
-                        key.key = quertyKeyList[i];
+                        key.key = i;
                         key.Bounds = new Rectangle(keys[keys.Count -1].Bounds.X + keys[keys.Count - 1].Bounds.Width, GraphicsDevice.Viewport.Height - keyboardHeight + keyHeight * 3, keyWidth * 3, keyHeight);
                         key.DrawingBounds = new Rectangle(key.Bounds.X + key.Bounds.Width * 5 / 100, key.Bounds.Y + key.Bounds.Height * 5 / 100, key.Bounds.Width - key.Bounds.Width * 5 / 100 - key.Bounds.Width * 5 / 100, key.Bounds.Height - key.Bounds.Height * 5 / 100 - key.Bounds.Height * 5 / 100);
                         keys.Add(key);

@@ -10,6 +10,6 @@ namespace TopHatHacker.Tools
         public Rectangle Bounds;
         public Rectangle DrawingBounds;
         public string KeyChar;
-        public Keys key;
+        public int key;
     }
 }
